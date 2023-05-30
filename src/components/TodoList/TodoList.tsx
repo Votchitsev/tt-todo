@@ -9,7 +9,12 @@ function TodoList() {
   return (
     <ul className={style.list}>
       { taskListStore.list.map(
-        task => <TodoItem key={ task.id } content={ task.text } />
+        task => 
+        <TodoItem
+          key={ task.id }
+          id={ task.id }
+          content={ task.text }
+        />
       )}
     </ul>
   )

@@ -20,6 +20,10 @@ class TaskList {
 
     this.list.push(newTask);
   }
+
+  remove(id: number) {
+    this.list = this.list.filter(item => item.id !== id);
+  } 
 }
 
 export default TaskList;
