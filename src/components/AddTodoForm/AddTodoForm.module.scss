@@ -1,0 +1,32 @@
+$border-color: #b1b1b1;
+
+.form {
+  display: flex;
+  width: 250px;
+  height: 32px;
+  border-radius: 5px;
+}
+
+.text_input {
+  width: 200px;
+  height: 26px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border: none;
+  outline: none;
+  border: 2px $border-color solid;
+  border-radius: 5px 0px 0px 5px;
+  color: #7b7b7b;
+}
+
+.submit_input {
+  width: 50px;
+  height: 100%;
+  background-color: $border-color;
+  border: none;
+  border-radius: 0px 5px 5px 0px;
+  height: 32px;
+  font-size: 1.5em;
+  cursor: pointer;
+  color: white;
+}

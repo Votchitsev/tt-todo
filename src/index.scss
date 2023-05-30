@@ -1,0 +1,21 @@
+$font-stack: Ubuntu, sans-serif;
+
+$background: #3F72AF;
+$card-background: #F9F7F7;
+$primary-color: #00E995;
+$primary-color-dark: #112D4E;
+$secondary-color: #AAAAAA;
+$soft-color: #DBE2EF;
+
+body {
+  font-family: $font-stack;
+  color: $primary-color-dark;
+  background-color: $background;
+  display: flex;
+  justify-content: center;
+}
+
+h1 {
+  font-weight: 400;
+  text-align: center;
+}
