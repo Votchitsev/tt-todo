@@ -1,3 +1,4 @@
+import { observer } from 'mobx-react';
 import { useStore } from '../../store/store';
 import style from './TodoItem.module.scss';
 
@@ -16,4 +17,4 @@ function TodoItem({ content } : { content : string }) {
   )
 }
 
-export default TodoItem;
+export default observer(TodoItem);

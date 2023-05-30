@@ -6,7 +6,7 @@ import { useStore } from './store/store';
 import style from './App.module.scss';
 
 function App() {
-  const { langStore } = useStore();
+  const { langStore, modalsStore } = useStore();
 
   return (
     <div className={style.card}>
@@ -15,6 +15,12 @@ function App() {
       <hr className={style.hr} />
       <TodoList />
       <LangToggle />
+      { modalsStore.activeModal
+        ? <modalsStore.activeModal.component
+          title={ modalsStore.activeModal.title }
+          text={ modalsStore.activeModal.text }
+        />
+        : null }
     </div>
   );
 }

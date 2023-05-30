@@ -1,0 +1,15 @@
+@use '../../index.scss';
+
+.modal_button {
+  border: none;
+  width: 100px;
+  height: 50px;
+  border-radius: 5px;
+  background-color: index.$secondary-color;
+  color: white;
+  cursor: pointer;
+
+  &:hover {
+    background-color: index.$secondary-color-hover;
+  }
+}
