@@ -17,10 +17,11 @@ function App() {
       <LangToggle />
       { modalsStore.activeModal
         ? <modalsStore.activeModal.component
-          title={ modalsStore.activeModal.title }
-          text={ modalsStore.activeModal.text }
-          task_id={ modalsStore.activeModal.task_id}
-        />
+            title={ modalsStore.activeModal.title }
+            text={ modalsStore.activeModal.text }
+            task_id={ modalsStore.activeModal.task_id }
+            defaultText={ modalsStore.activeModal.defaultText }
+          />
         : null }
     </div>
   );

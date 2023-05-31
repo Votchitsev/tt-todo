@@ -16,8 +16,9 @@ function TodoItem({ id, content, isComplete } : PropInterface) {
       component: EditTaskModal,
       title: 'Измените задачу',
       task_id: id,
-    })
-  }
+      defaultText: content,
+    });
+  };
 
   const onSetComplete = (e: ChangeEvent<HTMLInputElement>) => {
     taskListStore.setComplete(id, e.target.checked);

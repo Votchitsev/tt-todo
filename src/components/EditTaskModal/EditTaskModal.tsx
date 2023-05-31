@@ -5,9 +5,9 @@ import style from './EditTaskModal.module.scss';
 import { useStore } from '../../store/store';
 import InfoModal from '../infoModal/infoModal';
 
-function EditTaskModal({ title, task_id } : { title: string; task_id: number; }) {
+function EditTaskModal({ title, task_id, defaultText } : { title: string; task_id: number; defaultText: string}) {
   const { taskListStore, modalsStore, langStore } = useStore();
-  const [formData, setFormData] = useState('');
+  const [formData, setFormData] = useState(defaultText);
 
   const onSubmitHandle = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -35,7 +35,11 @@ function EditTaskModal({ title, task_id } : { title: string; task_id: number; })
 
   return (
     <Modal>
-      <form className={style.edit_task_form} onSubmit={onSubmitHandle} onClick={(e) => e.stopPropagation()}>
+      <form
+        className={style.edit_task_form}
+        onSubmit={onSubmitHandle}
+        onClick={(e) => e.stopPropagation()}
+      >
         <h2>{ title }</h2>
         <input
           type='text'

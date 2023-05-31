@@ -5,6 +5,7 @@ interface ModalInterface {
   title: string;
   text?: string;
   task_id?: number;
+  defaultText?: string;
 }
 
 class Modals {
