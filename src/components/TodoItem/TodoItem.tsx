@@ -1,9 +1,18 @@
 import { observer } from 'mobx-react';
 import { useStore } from '../../store/store';
 import style from './TodoItem.module.scss';
+import EditTaskModal from '../EditTaskModal/EditTaskModal';
 
 function TodoItem({ id, content } : { id: number; content : string }) {
-  const { langStore, taskListStore } = useStore();
+  const { langStore, taskListStore, modalsStore } = useStore();
+
+  const setModal = () => {
+    modalsStore.setActive({
+      component: EditTaskModal,
+      title: 'Измените задачу',
+      task_id: id,
+    })
+  }
 
   return (
     <li className={style.item}>
@@ -11,7 +20,9 @@ function TodoItem({ id, content } : { id: number; content : string }) {
       <div className={style.content}>{ content }</div>
       <div className={style.btn_container}>
         <button
-          className={style.edit_btn}>
+          className={style.edit_btn}
+          onClick={setModal}
+        >
             { langStore.content.editTaskBtn }
         </button>
         <button

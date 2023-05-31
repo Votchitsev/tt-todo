@@ -5,7 +5,7 @@ import InfoModal from '../infoModal/infoModal';
 
 function AddTodoForm() {
   const { langStore, taskListStore, modalsStore } = useStore();
-  const [formData, setFormData] = useState('');
+  const [ formData, setFormData ] = useState('');
 
   const onChangeHandle = (e: ChangeEvent<HTMLInputElement>) => {
     const value = e.currentTarget.value;

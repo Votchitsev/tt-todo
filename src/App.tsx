@@ -19,6 +19,7 @@ function App() {
         ? <modalsStore.activeModal.component
           title={ modalsStore.activeModal.title }
           text={ modalsStore.activeModal.text }
+          task_id={ modalsStore.activeModal.task_id}
         />
         : null }
     </div>

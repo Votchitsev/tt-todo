@@ -3,7 +3,8 @@ import { makeAutoObservable } from 'mobx';
 interface ModalInterface {
   component: Function;
   title: string;
-  text: string;
+  text?: string;
+  task_id?: number;
 }
 
 class Modals {

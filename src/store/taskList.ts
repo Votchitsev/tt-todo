@@ -23,7 +23,15 @@ class TaskList {
 
   remove(id: number) {
     this.list = this.list.filter(item => item.id !== id);
-  } 
+  }
+
+  update(id: number, text: string) {
+    const updatedTask = this.list.find(item => item.id === id);
+
+    if (updatedTask) {
+      updatedTask.text = text;
+    }
+  }
 }
 
 export default TaskList;
