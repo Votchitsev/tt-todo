@@ -4,10 +4,10 @@ import en from '../lang/en';
 
 
 class Lang {
-  language = 'ru' as 'ru' | 'en';
+  language = window.navigator.language as 'ru' | 'en-US';
   languages = {
     'ru': ru,
-    'en': en,
+    'en-US': en,
   }
 
   constructor() {
@@ -19,7 +19,7 @@ class Lang {
   };
 
   switch(language: string) {
-    if (language !== 'ru' && language !== 'en') {
+    if (language !== 'ru' && language !== 'en-US') {
       return;
     }
 

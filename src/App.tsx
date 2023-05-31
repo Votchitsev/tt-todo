@@ -8,6 +8,9 @@ import style from './App.module.scss';
 function App() {
   const { langStore, modalsStore } = useStore();
 
+  console.log(langStore.language);
+  
+
   return (
     <div className={style.card}>
       <h1>{ langStore.content.appName }</h1>

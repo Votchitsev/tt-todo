@@ -21,7 +21,7 @@ function LangToggle() {
         ru
       </button>
       <button
-        className={ `${style.right} ${langStore.language === 'en' ? `${style.active}` : ''}` }
+        className={ `${style.right} ${langStore.language === 'en-US' ? `${style.active}` : ''}` }
         type='button'
         onClick={onClickHandle}
         name='en'
