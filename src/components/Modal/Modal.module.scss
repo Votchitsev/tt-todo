@@ -20,3 +20,15 @@
     padding: 20px 20px 40px;
   }
 }
+
+@media screen and (max-width: 750px) {
+  .modal_content {
+    width: 250px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .modal_content {
+    width: 220px;
+  }
+}

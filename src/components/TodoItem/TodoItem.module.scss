@@ -3,10 +3,13 @@
 .item {
   position: relative;
   display: grid;
-  grid-template-columns: 7% 90%;
+  grid-template-columns: 10% 90%;
   align-items: center;
   padding-left: 10px;
-  height: 55px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  height: fit-content;
+  min-height: 55px;
   background-color: index.$soft-color;
   margin-bottom: 20px;
   border-radius: 5px;
@@ -18,6 +21,10 @@
       right: 0px;
     }
   }
+
+  &::before {
+    width: 50%;
+  }
   
   input {
     width: 24px;
@@ -26,8 +33,10 @@
     justify-self: flex-start;
   }
 
-  .content {
-    justify-self: center;
+  .content:hover {
+    .btn_container {
+      right: 0px;
+    }
   }
 
   .btn_container {
@@ -43,6 +52,7 @@
     cursor: pointer;
     height: 100%;
     color: white;
+    min-width: 60px;
   }
 
   .delete_btn {
@@ -57,4 +67,21 @@
 
 .crossed_text {
   text-decoration: line-through;
+}
+
+@media screen and (max-width: 750px) {
+  .item {
+    grid-template-columns: 15% 78%;
+  }
+  
+  .content {
+    overflow-wrap: anywhere;
+    font-size: 0.8em;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .item {
+    grid-template-columns: 20% 78%;
+  }
 }
