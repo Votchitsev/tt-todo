@@ -6,10 +6,7 @@ import { useStore } from './store/store';
 import style from './App.module.scss';
 
 function App() {
-  const { langStore, modalsStore } = useStore();
-
-  console.log(langStore.language);
-  
+  const { langStore, modalsStore } = useStore(); 
 
   return (
     <div className={style.card}>
