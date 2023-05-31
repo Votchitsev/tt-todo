@@ -1,16 +1,60 @@
+import { type ChangeEvent, useState } from 'react';
+import { observer } from 'mobx-react';
+import { useStore } from '../../store/store';
+import EditTaskModal from '../EditTaskModal/EditTaskModal';
+import { type PropInterface } from './interface';
 import style from './TodoItem.module.scss';
 
-function TodoItem({ content } : { content : string }) {
+function TodoItem({ id, content, isComplete } : PropInterface) {
+  const { langStore, taskListStore, modalsStore } = useStore();
+  const [ textClassList, setTextClassList ] = useState(
+    [style.content, isComplete ? style.crossed_text : null]
+  );
+
+  const setModal = () => {
+    modalsStore.setActive({
+      component: EditTaskModal,
+      title: langStore.content.modals.taskEdit.title,
+      task_id: id,
+      defaultText: content,
+    });
+  };
+
+  const onSetComplete = (e: ChangeEvent<HTMLInputElement>) => {
+    taskListStore.setComplete(id, e.target.checked);
+
+    if (e.target.checked) {
+      setTextClassList([...textClassList, style.crossed_text]);
+      return;
+    }
+
+    setTextClassList([style.content]);
+  }
+
   return (
     <li className={style.item}>
-      <input type="checkbox"></input>
-      <div className={style.content}>{ content }</div>
+      <input
+        type="checkbox"
+        onChange={onSetComplete}
+        defaultChecked={isComplete}
+      />
+      <div className={textClassList.join(' ')}>{ content }</div>
       <div className={style.btn_container}>
-        <button className={style.edit_btn}>Change</button>
-        <button className={style.delete_btn}>Delete</button>
+        <button
+          className={style.edit_btn}
+          onClick={setModal}
+        >
+            { langStore.content.editTaskBtn }
+        </button>
+        <button
+          className={style.delete_btn}
+          onClick={ () => taskListStore.remove(id) }
+        >
+          { langStore.content.deleteTaskBtn }
+        </button>
       </div>
     </li>
   )
 }
 
-export default TodoItem;
+export default observer(TodoItem);

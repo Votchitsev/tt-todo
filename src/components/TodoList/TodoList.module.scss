@@ -5,3 +5,29 @@
   list-style-type: none;
   padding: 0;
 }
+
+.show_completed_container {
+  width: 90%;
+  display: flex;
+  align-items: center;
+  align-self: center;
+}
+
+.show_completed {
+  color: #7b7b7b;
+  display: flex;
+  align-items: center;
+
+  input {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    margin-left: 10px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .show_completed {
+    font-size: 0.9em;
+  }
+}

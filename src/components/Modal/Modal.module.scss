@@ -1,0 +1,34 @@
+.modal {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba($color: #000000, $alpha: 0.4);
+
+  &_content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 400px;
+    z-index: 1;
+    background-color: #F9F7F7;
+    border-radius: 5px;
+    padding: 20px 20px 40px;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .modal_content {
+    width: 250px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .modal_content {
+    width: 220px;
+  }
+}
