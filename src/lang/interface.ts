@@ -8,5 +8,6 @@ export interface LangInterface {
       title: string;
       text: string;
     }
-  }
+  },
+  showCompleted: string,
 }

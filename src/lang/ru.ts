@@ -10,7 +10,8 @@ const ru: LangInterface = {
       title: 'Ошибка валидации',
       text: 'Длинна задачи не может быть больше 50 символов'
     }
-  }
+  },
+  showCompleted: 'Показывать выполненные'
 };
 
 export default ru;
