@@ -1,13 +1,13 @@
 import { ReactNode } from 'react';
-import style from './Modal.module.scss'
 import { useStore } from '../../store/store';
+import style from './Modal.module.scss'
 
 function Modal({ children } : { children: ReactNode }) {
   const { modalsStore } = useStore();
 
   const onClose = () => {
     modalsStore.setActive(null);
-  }
+  };
 
   return (
     <div className={style.modal} onClick={ onClose }>
@@ -15,7 +15,7 @@ function Modal({ children } : { children: ReactNode }) {
         { children }
       </div>
     </div>
-  )
+  );
 }
 
 export default Modal;

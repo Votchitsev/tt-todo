@@ -1,9 +1,9 @@
 import { type ChangeEvent, useState } from 'react';
 import { observer } from 'mobx-react';
 import { useStore } from '../../store/store';
-import style from './TodoItem.module.scss';
 import EditTaskModal from '../EditTaskModal/EditTaskModal';
 import { type PropInterface } from './interface';
+import style from './TodoItem.module.scss';
 
 function TodoItem({ id, content, isComplete } : PropInterface) {
   const { langStore, taskListStore, modalsStore } = useStore();
@@ -14,7 +14,7 @@ function TodoItem({ id, content, isComplete } : PropInterface) {
   const setModal = () => {
     modalsStore.setActive({
       component: EditTaskModal,
-      title: 'Измените задачу',
+      title: langStore.content.modals.taskEdit.title,
       task_id: id,
       defaultText: content,
     });

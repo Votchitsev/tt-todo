@@ -12,11 +12,19 @@ class Lang {
 
   constructor() {
     makeAutoObservable(this);
-  }
+  };
 
   get content() {
     return this.languages[this.language];
-  }
+  };
+
+  switch(language: string) {
+    if (language !== 'ru' && language !== 'en') {
+      return;
+    }
+
+    this.language = language;
+  };
 }
 
 export default Lang;

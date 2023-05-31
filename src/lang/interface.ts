@@ -7,7 +7,11 @@ export interface LangInterface {
     taskLengthError: {
       title: string;
       text: string;
+    }, 
+    taskEdit: {
+      title: string;
     }
   },
-  showCompleted: string,
-}
+  showCompleted: string;
+};
+

@@ -9,6 +9,9 @@ const en: LangInterface = {
     taskLengthError: {
       title: 'Validation Error',
       text: "Task length should't be more than 50 characters"
+    },
+    taskEdit: {
+      title: 'Change task',
     }
   },
   showCompleted: 'Show completed',

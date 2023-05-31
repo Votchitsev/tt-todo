@@ -1,7 +1,7 @@
 import Button from '../Button/Button';
 import Modal from '../Modal/Modal';
 import { useStore } from '../../store/store';
-import style from './infoModal.module.scss';
+import style from './InfoModal.module.scss';
 import { PropInterface } from './interface';
 
 function InfoModal({ title, text } : PropInterface) {
@@ -17,7 +17,11 @@ function InfoModal({ title, text } : PropInterface) {
         <h2>{ title }</h2>
         <p>{ text }</p>
         <br />
-        <Button type='button' name='OK' clickHandler={onClose} />
+        <Button
+          type='button'
+          name='OK'
+          clickHandler={onClose}
+        />
       </div>
     </Modal>
   )

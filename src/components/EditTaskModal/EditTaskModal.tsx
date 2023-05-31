@@ -1,11 +1,12 @@
 import { useState, type FormEvent } from 'react';
 import Button from '../Button/Button';
 import Modal from '../Modal/Modal';
-import style from './EditTaskModal.module.scss';
 import { useStore } from '../../store/store';
-import InfoModal from '../infoModal/infoModal';
+import InfoModal from '../InfoModal/InfoModal';
+import { PropInterface } from './interface';
+import style from './EditTaskModal.module.scss';
 
-function EditTaskModal({ title, task_id, defaultText } : { title: string; task_id: number; defaultText: string}) {
+function EditTaskModal({ title, task_id, defaultText } : PropInterface) {
   const { taskListStore, modalsStore, langStore } = useStore();
   const [formData, setFormData] = useState(defaultText);
 

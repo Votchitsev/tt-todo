@@ -1,7 +1,7 @@
 import { type FormEvent, useState, ChangeEvent } from 'react';
 import { useStore } from '../../store/store';
+import InfoModal from '../InfoModal/InfoModal';
 import style from './AddTodoForm.module.scss';
-import InfoModal from '../infoModal/infoModal';
 
 function AddTodoForm() {
   const { langStore, taskListStore, modalsStore } = useStore();
@@ -10,7 +10,7 @@ function AddTodoForm() {
   const onChangeHandle = (e: ChangeEvent<HTMLInputElement>) => {
     const value = e.currentTarget.value;
     setFormData(value);
-  }
+  };
 
   const onSubmitHandle = (e: FormEvent) => {
     e.preventDefault();
@@ -18,7 +18,7 @@ function AddTodoForm() {
     if (!formData.trim().length) {
       setFormData('');
       return;
-    }
+    };
 
     if (formData.length > 50) {
       setFormData('');
@@ -30,11 +30,11 @@ function AddTodoForm() {
       });
 
       return;
-    }
+    };
 
     taskListStore.add(formData.trim());
     setFormData('');
-  }
+  };
 
   return(
     <form className={style.form} onSubmit={onSubmitHandle}>
@@ -51,7 +51,7 @@ function AddTodoForm() {
         type='submit' value='+'
       />
     </form>
-  )  
+  ); 
 }
 
 export default AddTodoForm;

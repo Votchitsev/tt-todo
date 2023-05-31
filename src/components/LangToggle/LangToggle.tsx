@@ -1,20 +1,14 @@
 import { type MouseEvent } from 'react';
-import { observer } from 'mobx-react'
-import style from './LangToggle.module.scss';
+import { observer } from 'mobx-react';
 import { useStore } from '../../store/store';
+import style from './LangToggle.module.scss';
 
 function LangToggle() {
   const { langStore } = useStore();
 
   const onClickHandle = (e: MouseEvent<HTMLButtonElement>) => {
-    if (e.currentTarget.getAttribute('name') === 'ru') {
-      langStore.language = 'ru';
-    };
-
-    if (e.currentTarget.getAttribute('name') === 'en') {
-      langStore.language = 'en';
-    }
-  }
+    langStore.switch(e.currentTarget.getAttribute('name') || 'ru');
+  };
 
   return (
     <div className={style.toggle}>

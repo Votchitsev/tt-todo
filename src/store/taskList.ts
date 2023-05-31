@@ -1,10 +1,10 @@
-import { makeAutoObservable } from 'mobx'
+import { makeAutoObservable } from 'mobx';
 
 interface TaskInterface {
   id: number;
   text: string;
   isComplete: boolean;
-}
+};
 
 class TaskList {
   list = [] as TaskInterface[];
