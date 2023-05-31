@@ -4,25 +4,21 @@ import en from '../lang/en';
 
 
 class Lang {
-  language = window.navigator.language as 'ru' | 'en-US';
-  languages = {
-    'ru': ru,
-    'en-US': en,
-  }
+  language = window.navigator.language as string;
 
   constructor() {
     makeAutoObservable(this);
   };
 
   get content() {
-    return this.languages[this.language];
+    if (this.language === 'ru') {
+      return ru
+    }
+
+    return en;
   };
 
   switch(language: string) {
-    if (language !== 'ru' && language !== 'en-US') {
-      return;
-    }
-
     this.language = language;
   };
 }
