@@ -8,7 +8,7 @@ const ru: LangInterface = {
   modals: {
     taskLengthError: {
       title: 'Ошибка валидации',
-      text: 'Длинна задачи не может быть больше 50 символов',
+      text: 'Длина задачи не может быть больше 50 символов',
     },
     taskEdit: {
       title: 'Измените задачу',
