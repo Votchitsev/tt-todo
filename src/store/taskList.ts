@@ -6,8 +6,29 @@ interface TaskInterface {
   isComplete: boolean;
 };
 
+/**
+ * Данные, предназначенные для демонстрации приложения.
+ */
+const mock: TaskInterface[] = [
+  {
+    id: 1,
+    text: 'По полям, по полям, синий трактор едет к нам.',
+    isComplete: false,
+  },
+  {
+    id: 2,
+    text: 'У него в прицепе кто-то песенку поет!',
+    isComplete: false,
+  },
+  {
+    id: 3,
+    text: 'А ну, малыш, давай!, Попробуй - отгадай. Кто же, кто же, кто же, кто же, Песенку поет?!',
+    isComplete: false,
+  },
+];
+
 class TaskList {
-  list = [] as TaskInterface[];
+  list = mock as TaskInterface[];
   showCompleted = false;
 
   constructor() {
